@@ -16,7 +16,7 @@ spec:
         app: prometheus-data-generator
     spec:
       containers:
-      - image: littleangryclouds/prometheus-data-generator:0.2
+      - image: ghcr.io/js94x/prometheus-data-generator
         imagePullPolicy: IfNotPresent
         env:
         - name: PDG_CONFIG
@@ -45,23 +45,6 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /pdg/
-      - image: quay.io/coreos/configmap-reload:v0.0.1
-        args:
-        - -webhook-url=http://localhost:9000/-/reload
-        - -volume-dir=/pdg/
-        - -webhook-method=GET
-        name: config-reloader
-        resources:
-          limits:
-            cpu: 5m
-            memory: 10Mi
-          requests:
-            cpu: 5m
-            memory: 10Mi
-        volumeMounts:
-        - name: config
-          mountPath: /pdg/
-          readOnly: true
       volumes:
       - name: config
         configMap:
