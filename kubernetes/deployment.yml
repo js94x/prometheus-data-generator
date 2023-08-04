@@ -16,7 +16,7 @@ spec:
         app: prometheus-data-generator
     spec:
       containers:
-      - image: ghcr.io/js94x/prometheus-data-generator
+      - image: ghcr.io/js94x/prometheus-data-generator:master
         imagePullPolicy: IfNotPresent
         env:
         - name: PDG_CONFIG
