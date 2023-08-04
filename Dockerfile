@@ -1,4 +1,4 @@
-FROM arm64v8/python:3.9-bookworm
+FROM cicirello/pyaction
 
 
 COPY requirements.txt ./tmp/
