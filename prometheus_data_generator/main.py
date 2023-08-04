@@ -262,7 +262,7 @@ class PrometheusDataGenerator:
         """
         threading.Thread(
             target=self.app.run,
-            kwargs={"port": "9000", "host": "0.0.0.0"}
+            kwargs={"port": "9000", "host": "::"}
         ).start()
 
 
